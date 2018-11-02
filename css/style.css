@@ -1,1 +1,711 @@
+:root {
+    --color: #24BAA0;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    width: 1055px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.section-title {
+    font-size: 22px;
+    color: #575757;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6px;
+    border-bottom: 8px solid var(--color);
+    width: 320px;
+    margin-top: 30px;
+}
+
+/* -----------------------page header -----------------------*/
+
+.page-header {
+    height: 40px;
+    background: #000;
+    position: relative;
+    z-index: 100000;
+}
+.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.page-logo {
+    margin: 0;
+    display: flex;
+    align-content: center;
+}
+
+.page-logo-link {
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-logo span{
+    color: var(--color);
+}
+
+.page-nav {
+}
+
+.page-nav-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-nav-list li {
+    position: relative;
+}
+
+.page-nav-list a {
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px;
+    display: block;
+    line-height: 40px;
+    transition: 0.5s;
+}
+
+.page-nav-list a:hover {
+    color: var(--color);
+}
+
+.page-nav-sublist {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    background: #000;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    transform: translate(-50%, 0);
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.page-nav-list li:hover .page-nav-sublist {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-nav-sublist:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #000;
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+.page-nav-sublist:before {
+    content: "";
+    width: 100%;
+    height: 12px;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: -12px;
+}
+
+.page-nav-sublist a {
+    text-transform: none;
+    font-weight: normal;
+    line-height: 25px;
+}
+
+
+/* -----------------------slider-----------------------*/
+
+
+
+.main-baner-bg {
+    background: linear-gradient(#fafafa, #ddd);
+}
+
+.banner {
+    height: 505px;
+    display: flex;
+}
+
+.banner-prev,
+.banner-next {
+    width: 100px;
+    font-size: 70px;
+    color: var(--color);
+    border: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* robi klikniecie że pojwia się na czarno */
+.banner-prev:active,
+.banner-next:active {
+    color: #000;
+}
+
+.banner-next {
+    order: 1; 
+}
+
+.banner-slides {
+    flex-grow: 1;
+    position: relative;
+}
+
+.banner-slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s;
+}
+
+.banner-slide-show {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    opacity: 1;
+    z-index: 1;
+}
+
+.img-black-chair {
+    background-image: url(../images/black_chair.png);
+    background-position: center;
+    background-size: cover;
+    width: 55%;
+    height: 350px;
+}
+
+.banner-slide-show-text {
+    width: 45%;
+    text-align: center;
+    height: 350px;
+    
+}
+
+.banner-slide-show-text h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.banner-slide-show-text h1 span {
+    color: var(--color)
+}
+
+.banner-slide-show-text p {
+    font-size: 14px;
+    padding-top: 10px;
+    line-height: 25px;
+}
+
+.banner-slide-show-text button {
+    margin-top: 10px;
+    padding: 15px 20px 15px 30px;
+    font-size: 26px;
+    text-transform: uppercase;
+    background-color: var(--color);
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 15px;
+    color: #fff;
+}
+
+
+/* -----------------------sekcja zdjęć-----------------------*/
+
+.offer {
+    height: 250px;
+    margin: 20px 0;
+}
+
+.offer-img-first {
+    width: 33%;
+    background-image: url(../images/box1_img.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    margin: auto 10px;
+    position: relative;
+}
+
+.offer-img-first h2 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 5px solid var(--color);
+    position: absolute;
+    top: 170px;
+    left: 10px;
+}
+
+.offer-img-first .offer-text-bg {
+    background: #fff;
+    opacity: 0.8;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 170px;
+}
+
+.offer-img-second {
+    background-image: url(../images/box2_img.jpg);
+    width: 33%;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    margin: auto 10px;
+    position: relative;
+}
+
+.offer-img-second h2 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 5px solid var(--color);
+    position: absolute;
+    top: 170px;
+    left: 10px;
+}
+
+.offer-img-second .offer-text-bg {
+    background: #fff;
+    opacity: 0.8;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 170px
+}
+
+.offer h2 span{
+    text-transform: uppercase;
+}
+       
+.offer-img-text {
+    width: 33%;
+    height: 100%;
+    border: 1px solid #aaa;
+    opacity: 0.8;
+    padding: 10px 20px;
+}
+
+.offer-img-text h2 {
+    display: inline-block;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 5px solid var(--color);
+}
+
+.offer-img-text > p {
+    color: #575757;
+    font-size: 14px;
+    margin-top: 0;
+} 
+
+/* -----------------------plan zakupu -----------------------*/
+
+.prices-plan {
+    background: #E0E0E0;
+    height: 800px;
+}
+
+.container .flex-container {
+    display: flex;  
+}
+
+.prices-plan h2 {
+    padding-top: 40px;
+}
+
+.prices-panel {
+    text-align: center;
+    width:33%;
+    background: #F8F8F8;
+    margin: 70px 10px 20px 10px;
+    height: 600px;
+    border: 2px solid #A9A9A9;
+    position: relative;
+}
+
+.circle-small {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    background-color: #A9A9A9;
+    position: absolute;
+    top: -45px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.prices-panel::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    display: inline-block;
+    border: 2px solid #A9A9A9;
+    border-radius: 100%;
+    background-color: #F8F8F8;
+    position: absolute;
+    top: -72px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.prices-panel h2 {
+    text-transform: uppercase;
+    color: var(--color);
+    font-size: 30px;
+}
+
+.prices-panel .price-circle {
+    height: 160px;
+    width: 160px;
+    border: 2px solid #A9A9A9;
+    border-radius: 100%;
+    margin: 0 auto;
+} 
+
+.price-circle p:first-child{
+    font-size: 60px;
+    font-weight: 600;
+    color: #A9A9A9;
+    margin-top:5px;
+    line-height: 2;
+    margin-bottom: 0px;
+}
+
+sup{
+    position: relative;
+    bottom: 30px;
+    top: 10px;
+    vertical-align: text-top; 
+    font-size: 40%;
+}
+
+.price-circle p:last-child {
+    font-weight: 600;
+    margin-top: -10px;
+    color: #A9A9A9;
+}
+
+.what-consist {
+    font-size: 25px;
+    color: #A9A9A9;
+    font-weight: 300;
+    padding-top: 30px;
+}
+
+.what-consist p {
+    margin: 0 2px;
+    padding: 10px 0;
+}
+
+.what-consist p:nth-child(2), 
+.what-consist p:nth-child(4) {
+    background-color: #DCDCDC;
+}
+
+.what-consist p:nth-child(1), 
+.what-consist p:nth-child(3) {
+    background-color: #F0F0F0;
+}
+
+
+.prices-panel button {
+    padding: 15px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: var(--color);
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 15px;
+    color: #fff;
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+
+/* -----------panel środkowy -------*/
+
+.prices-panel-middle {
+    text-align: center;
+    width:33%;
+    background-color: var(--color);
+    margin: 70px 10px 20px 10px;
+    height: 600px;
+    position: relative;
+}
+
+.circle-small-middle {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: -45px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.prices-panel-middle::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    display: inline-block;
+    border-radius: 100%;
+    background-color: var(--color);
+    position: absolute;
+    top: -72px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.prices-panel-middle h2 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+}
+
+.prices-panel-middle .price-circle-middle {
+    height: 160px;
+    width: 160px;
+    background-color: white;
+    border-radius: 100%;
+    margin: 0 auto;
+} 
+
+.price-circle-middle p:first-child{
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--color);
+    margin-top:5px;
+    line-height: 2;
+    margin-bottom: 0px;
+}
+
+sup{
+    position: relative;
+    bottom: 30px;
+    top: 10px;
+    vertical-align: text-top; 
+    font-size: 40%;
+}
+
+.price-circle-middle p:last-child {
+    font-weight: 600;
+    margin-top: -10px;
+    color: var(--color);
+}
+
+.what-consist-middle {
+    font-size: 25px;
+    color: #A9A9A9;
+    font-weight: 300;
+    padding-top: 30px;
+}
+
+.what-consist-middle p {
+    margin: 0 2px;
+    padding: 10px;
+}
+
+.what-consist-middle p:first-child,
+.what-consist-middle p:last-child {
+    background-color: white;
+}
+
+.what-consist-middle p:nth-child(2) {
+    background-color: #DCDCDC;
+}
+
+.prices-panel-middle button {
+    margin-top: 70px;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 15px;
+    color: var(--color);
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+
+
+/* -----------------------formularz -----------------------*/
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.form-left {
+    width: 635px;
+}
+
+.form-right {
+    width: 345px;
+}
+
+.form-row {
+    margin-bottom: 25px;
+}
+
+.form label:not(.checkbox) {
+    position: absolute;
+    left: -999999px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    height: 68px;
+    border: 1px solid var(--color);
+    font-size: 33px;
+    font-weight: 300;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.form input[type="text"]::placeholder,
+.form input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #ddd;
+}
+
+.form textarea {
+    height: 190px;
+    resize: none;
+    padding: 10px;
+}
+
+.red-chair {
+    padding: 0px 10px 15px;
+    padding-top:0;
+    text-align: center;
+}
+
+.form-row button {
+    margin-top: 30px;
+    padding: 10px;
+    width: 100%;
+    font-size:40px;
+    text-transform: uppercase;
+    background-color: var(--color);
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 15px;
+    color: white;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-input {
+    width: 50px;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid var(--color);
+    flex-shrink: 0;
+    outline: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.checkbox-input:checked {
+    background-image: url(../images/form_ok.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checkbox-text {
+    font-size: 18px;
+    font-weight: 300;
+    color: #aaa;
+}
+      
+
+
+/* -----------------------footer -----------------------*/
+
+.footer {
+    height: 100px;
+    margin-top: 20px;
+}
+
+.copyright {
+    font-size: 20px;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.logo-sign {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.logo-sign span {
+    font-weight: 700;
+}
